@@ -14,6 +14,18 @@
             <input placeholder="请输入商品名称" title="查找每日最新京东优惠券" id="item" name="item" type="search" autofocus onkeydown="if(event.keyCode==13){Search();}"></input>
             <button  onclick="Search();">🔎</button>
         </p>
-        <div id="items"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="1">商品</th>
+                    <th colspan="1">店家</th>
+                    <th colspan="3">优惠</th>
+                    <th colspan="1">日期</th>
+                </tr>
+            </thead>
+            <tbody id="items">
+            </tbody>
+        </table>
+        
     </body>
 </html>
