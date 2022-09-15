@@ -34,8 +34,21 @@ function appendItem(itemInputValue,item){
     var itemLinePrice = document.createElement("del");
     itemLinePrice.appendChild(document.createTextNode("原价:"+item.linePrice));
     appendItemTd(itemTr, itemLinePrice);
-    appendItemTd(itemTr, document.createTextNode("现价:"+item.price));
-    appendItemTd(itemTr, document.createTextNode("优惠"+item.cou+"元"));
+    var itemPrice = document.createElement("p");
+    itemPrice.appendChild(document.createTextNode("现价："));
+    var strItemPrice = document.createElement("strong");
+    strItemPrice.appendChild(document.createTextNode(item.price));
+    strItemPrice.style="color:red";
+    itemPrice.appendChild(strItemPrice);1
+    appendItemTd(itemTr, itemPrice);
+    var itemCou = document.createElement("p");
+    itemCou.appendChild(document.createTextNode("优惠"))
+    var strItemCou = document.createElement("strong");
+    strItemCou.appendChild(document.createTextNode(item.cou));
+    strItemCou.style="color:red";
+    itemCou.appendChild(strItemCou);
+    itemCou.appendChild(document.createTextNode("元"))
+    appendItemTd(itemTr, itemCou);
     appendItemTd(itemTr, document.createTextNode(item.date));
 }
 function getItemByInput(itemKey,list){
