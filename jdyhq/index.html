@@ -34,7 +34,7 @@
     <script type="application/javascript">
         var key = window.location.href.split("?")[1];
         if(key != undefined){
-            document.getElementById("item").value = key;
+            document.getElementById("item").value = decodeURI(key);
         }
         Search();
     </script>
