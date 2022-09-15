@@ -21,6 +21,9 @@ function  appendItemTd(itemTr,itemTdInner){
 }
 function appendItem(itemInputValue,item){
     var itemTr = document.createElement("tr");
+    var itemShop = document.createElement("p");
+    makeInner(itemShop, item.shop);
+    appendItemTd(itemTr, itemShop);
     var itemName = document.createElement("a");
     itemName.title=item.itemName+"京东优惠券";
     itemName.alt=itemName.title;
@@ -28,9 +31,6 @@ function appendItem(itemInputValue,item){
     itemName.target="_blank";
     makeInner(itemName, item.itemName);
     appendItemTd(itemTr, itemName);
-    var itemShop = document.createElement("p");
-    makeInner(itemShop, item.shop);
-    appendItemTd(itemTr, itemShop);
     var itemLinePrice = document.createElement("del");
     itemLinePrice.appendChild(document.createTextNode("原价:"+item.linePrice));
     appendItemTd(itemTr, itemLinePrice);
@@ -49,9 +49,6 @@ function getItemByInput(itemKey,list){
 function Search(){
     document.getElementById("items").innerHTML="";;
     var itemKey = document.getElementById("item").value;
-    if(itemKey==""){
-        return;
-    }
     getItemByInput(itemKey, itemList);
     return;
 }
