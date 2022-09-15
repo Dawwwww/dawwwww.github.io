@@ -7,8 +7,12 @@
         <meta name="description" content="京东优惠券在哪里领 一键领取 京东快递优惠券免费领取 京东手机优惠券 京东内部优惠券 京东隐藏优惠券哪里领取 怎么领取京东大额优惠券 京东优惠券直达链接方法	京东优惠券怎么分享 京东内部商城是真的吗 哪里有京东优惠券">
         <script type="application/javascript" src="itemList.js"></script>
         <script type="application/javascript" src="getItemList.js"></script>
+        <link rel="stylesheet" type="text/css" href="..\style.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="..\favicon.ico" />
     </head>
     <body>
+        <h1>最新京东优惠券</h1>
+        <h2><a href="..\index.html" target="_blank" title="最新饿了么优惠券" alt="最新饿了么优惠券，饿了么红包">点此链接领取饿了么优惠券</a></h2>
         <p>
             <label for="item">搜索：</label>
             <input placeholder="请输入商品名称" title="查找每日最新京东优惠券" id="item" name="item" type="search" autofocus onkeydown="if(event.keyCode==13){Search();}"></input>
@@ -27,5 +31,11 @@
             </tbody>
         </table>
     </body>
-    <script type="application/javascript">Search();</script>
+    <script type="application/javascript">
+        var key = window.location.href.split("?")[1];
+        if(key != undefined){
+            document.getElementById("item").value = key;
+        }
+        Search();
+    </script>
 </html>
